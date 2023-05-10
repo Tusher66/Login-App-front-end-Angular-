@@ -1,0 +1,7 @@
+<div class="bootstrap-wrapper">
+    <div class="container text-center">
+        <h1>Welcome to Admin Panel</h1>
+        <button (click)="getdata()" mat-flat-button color="accent">Get Start</button>
+        <h1 *ngIf="userName">The User Name is: {{userName.name}}</h1>
+    </div>
+</div>
