@@ -12,8 +12,8 @@ export class LoginService {
 
   //Calling the server to generate the token
   generateToken(creadential:any){
-    console.log("hghghj",creadential);
-    console.log("req hhhh",this.http.post(`${this.url}/token`,creadential));
+    // console.log("hghghj",creadential);
+    // console.log("req hhhh",this.http.post(`${this.url}/token`,creadential));
     
     
     return this.http.post(`${this.url}/token`,creadential);

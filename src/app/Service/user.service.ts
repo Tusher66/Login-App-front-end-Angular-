@@ -14,4 +14,8 @@ export class UserService {
     return this.http.get(`${this.url}/welcome`)
   }
 
+  saveUser(userData:any){
+    return this.http.post(`${this.url}/signup`,userData);
+  }
+
 }
