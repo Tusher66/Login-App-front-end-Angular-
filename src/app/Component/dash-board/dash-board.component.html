@@ -1,7 +1,65 @@
 <div class="bootstrap-wrapper">
     <div class="container text-center">
         <h1>Welcome to Admin Panel</h1>
-        <button (click)="getdata()" mat-flat-button color="accent">Get Start</button>
-        <h1 *ngIf="userName">The User Name is: {{userName.name}}</h1>
+        <button *ngIf="!userName" (click)="getdata()" mat-flat-button color="accent">Get Start</button>
+        <h5 *ngIf="userName">{{userName.name}}</h5>
     </div>
+
+
+<!-- Implementing Charts -->
+
+<div *ngIf="userName">
+    <div class="row ml-4">
+      <div class="col">
+          <div class="row">
+                <ngx-charts-bar-vertical
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="single"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel">
+                </ngx-charts-bar-vertical>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+
+            <ngx-charts-pie-chart
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="single"
+                [legend]="showLegend"
+                
+                [labels]="showLabels"
+                [doughnut]="doughnut"
+                [gradient]="gradient"
+              ></ngx-charts-pie-chart>
+
+            <!-- <ngx-charts-bar-vertical-normalized
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="multi"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel">
+            </ngx-charts-bar-vertical-normalized> -->
+          </div>
+        </div>
+      </div>
+      
+  
+  </div>
+
+
 </div>

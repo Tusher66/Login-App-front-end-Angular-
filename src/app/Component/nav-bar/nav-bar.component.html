@@ -1,10 +1,13 @@
-<div class="container">
-<mat-toolbar color="primary">
-<span><a mat-flat-button color="primary" routerLink="/">Login App</a></span>
-<span class="example-spacer"></span>
-
-<a *ngIf="!loggedin" mat-flat-button routerLink="/login" color="primary">Login</a>
-<a style="margin-right: 10px;" *ngIf="loggedin" mat-flat-button color="primary" routerLink="/dashboard" >Dashboard</a>
-<a (click)="logoutUser()" *ngIf="loggedin" mat-flat-button color="primary">Logout</a>
-</mat-toolbar>
+<div class="bootstrap-wrapper">
+    <div class="">
+        <mat-toolbar color="primary">
+        <span>
+            <a mat-flat-button color="primary" routerLink="/">Login App</a>
+        </span>
+        <span class="example-spacer"></span>
+        <a *ngIf="!loggedin" mat-flat-button routerLink="/login" color="primary">Login</a>
+        <a style="margin-right: 10px;" *ngIf="loggedin" mat-flat-button color="primary" routerLink="/dashboard" >Dashboard</a>
+        <a (click)="logoutUser()" *ngIf="loggedin" mat-flat-button color="primary">Logout</a>
+    </mat-toolbar>
+    </div>
 </div>

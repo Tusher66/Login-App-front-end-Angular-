@@ -4,6 +4,7 @@ import { HomeComponent } from './Component/home/home.component';
 import { LoginComponent } from './Component/login/login.component';
 import { DashBoardComponent } from './Component/dash-board/dash-board.component';
 import { AuthGuard } from './Service/auth.guard';
+import { RegistrationPageComponent } from './Component/registration-page/registration-page.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,13 @@ const routes: Routes = [
     component:LoginComponent,
     pathMatch:"full"
   },
+
+  {
+    path:"signup",
+    component:RegistrationPageComponent,
+    pathMatch:"full"
+  },
+
   {
     path:"dashboard",
     component:DashBoardComponent,

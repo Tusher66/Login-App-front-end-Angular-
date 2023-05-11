@@ -16,6 +16,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { LoginService } from './Service/login.service';
 import { AuthGuard } from './Service/auth.guard';
 import { AuthInterceptor } from './Service/auth.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { RegistrationPageComponent } from './Component/registration-page/registration-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { AuthInterceptor } from './Service/auth.interceptor';
     NavBarComponent,
     HomeComponent,
     LoginComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    RegistrationPageComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,9 @@ import { AuthInterceptor } from './Service/auth.interceptor';
     FormsModule,
     MatInputModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    NgxChartsModule, 
+
     
   ],
   providers: [LoginService, AuthGuard, [{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}]],
