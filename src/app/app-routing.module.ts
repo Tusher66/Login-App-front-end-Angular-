@@ -5,6 +5,7 @@ import { LoginComponent } from './Component/login/login.component';
 import { DashBoardComponent } from './Component/dash-board/dash-board.component';
 import { AuthGuard } from './Service/auth.guard';
 import { RegistrationPageComponent } from './Component/registration-page/registration-page.component';
+import { AboutusComponent } from './Component/aboutus/aboutus.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,13 @@ const routes: Routes = [
   {
     path:"dashboard",
     component:DashBoardComponent,
+    pathMatch:"full",
+    canActivate:[AuthGuard]
+
+  },
+  {
+    path:"aboutus",
+    component:AboutusComponent,
     pathMatch:"full",
     canActivate:[AuthGuard]
 

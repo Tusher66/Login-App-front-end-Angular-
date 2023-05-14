@@ -19,6 +19,8 @@ import { AuthInterceptor } from './Service/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RegistrationPageComponent } from './Component/registration-page/registration-page.component';
+import { AboutusComponent } from './Component/aboutus/aboutus.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { RegistrationPageComponent } from './Component/registration-page/registr
     HomeComponent,
     LoginComponent,
     DashBoardComponent,
-    RegistrationPageComponent
+    RegistrationPageComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { RegistrationPageComponent } from './Component/registration-page/registr
     HttpClientModule,
     BrowserAnimationsModule,
     NgxChartsModule, 
+    ToastrModule.forRoot(),
 
     
   ],

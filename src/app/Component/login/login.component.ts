@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { LoginService } from 'src/app/Service/login.service';
 
 @Component({
@@ -13,7 +14,9 @@ export class LoginComponent {
     password:''
   }
 
-  constructor(private loginService:LoginService){}
+  successMsg:any;
+
+  constructor(private toaster:ToastrService, private loginService:LoginService){}
 
   onSubmit(){
 
@@ -22,19 +25,26 @@ export class LoginComponent {
       console.log("The form is submitted");
       this.loginService.generateToken(this.creadential).subscribe(
         (response:any)=>{
-          console.log("rrrrrrrrrrrrrrr",response.token);
+          // console.log("rrrrrrrrrrrrrrr",response.token);
+          this.successMsg="LOGIN SUCCESSFULLY";
+          // alert("LOGIN SUCCESSFULLY");
           this.loginService.loginUser(response.token);
-          window.location.href="/dashboard"
-          
+          this.toaster.success(this.successMsg);
+          window.location.href="/dashboard" 
         },
         error=>{
+          this.successMsg="WRONG USERNAME OR PASSWORD";
+          // this.toaster.error(this.successMsg ,'Major Error', {
+          //   timeOut: 9000,
+          // });
+          this.toaster.error(this.successMsg);
           console.log(error);
           
         }
       )
 
     }else{
-      console.log("The From is not Submitted");
+      this.toaster.error("The From is not Submitted");
       
     }
     

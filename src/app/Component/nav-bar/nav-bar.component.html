@@ -7,6 +7,7 @@
         <span class="example-spacer"></span>
         <a *ngIf="!loggedin" mat-flat-button routerLink="/login" color="primary">Login</a>
         <a style="margin-right: 10px;" *ngIf="loggedin" mat-flat-button color="primary" routerLink="/dashboard" >Dashboard</a>
+        <a style="margin-right: 10px;" *ngIf="loggedin" mat-flat-button color="primary" routerLink="/aboutus" >About us</a>
         <a (click)="logoutUser()" *ngIf="loggedin" mat-flat-button color="primary">Logout</a>
     </mat-toolbar>
     </div>
