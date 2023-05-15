@@ -21,6 +21,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RegistrationPageComponent } from './Component/registration-page/registration-page.component';
 import { AboutusComponent } from './Component/aboutus/aboutus.component';
 import { ToastrModule } from 'ngx-toastr';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
+import { SideNavBarComponent } from './Component/side-nav-bar/side-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     DashBoardComponent,
     RegistrationPageComponent,
-    AboutusComponent
+    AboutusComponent,
+    SideNavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +49,11 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     NgxChartsModule, 
     ToastrModule.forRoot(),
+    MatSidenavModule,
+    MatDividerModule,
+    MatIconModule
+ 
+
 
     
   ],
